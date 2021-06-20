@@ -1,0 +1,235 @@
+<!-- heyyya -->
+<!--  -->
+<!--  -->
+<!--  -->
+
+<div class="dx">
+  <div class="box">
+    <div class="g" style="display: flex; justify-content: center; align-items: center; font-size: 3rem;">TASK</div>
+    <!-- 
+    <div class="g" style="display: flex; align-items: center; padding: 1.4rem;">
+      <button (click)="addX()" style="background-color: darkorchid; padding: 0.2rem 0.35rem 0.2rem;">ADD</button>
+    </div> -->
+
+    <!-- <div id="say" style="height: 1rem; width: 4.5rem;"><input type="text" (keyup)="myEvent('hello')"></div> -->
+    <!-- <div id="say" style="height: 1rem; width: 4.5rem;"><input #usethisid type="text" (keyup)="myEvent(usethisid.value)"></div> -->
+    <!-- <div id="say" style="height: 1rem; width: 4.5rem;"><input #usethisid type="text" (keyup.space)="myEvent(usethisid.value)"></div> -->
+
+    <!-- when you click the mouse outside -->
+    <!-- <div id="say" style="height: 1rem; width: 4.5rem;"><input #usethisid type="text" (blur)="myEvent(usethisid.value)"></div> -->
+
+    <!-- <div id="say" style="height: 1rem; width: 4.5rem;"><input #usethisid type="text" (keyup.enter)="myEvent(usethisid.value)"></div> -->
+
+    <!-- <div class="ms"> -->
+    <!-- <input id="mouse" (mouseover)="myEvent('mouse has arrived')"> -->
+    <!-- <input id="mouse" (mouseleave)="myEvent('mouse has gone')"> -->
+    <!-- <div id="say" style="height: 1rem; width: 4.5rem;"><input #usethisid type="text" (keyup.space)="myEvent(usethisid.value)" (keyup.enter)="myEvent(usethisid.value)"></div> -->
+    <!-- </div> -->
+
+    <!-- currentval="" ,,  -->
+
+    <!-- ** i need to learn about the `this` thing -->
+
+    <div style="height: 3rem; width: 25rem; display: flex; justify-content: center; align-items: center;">
+      <!-- <input type="text" (keyup)="addNew($event)"> -->
+      <input id="z" #bigbox type="text" style="height: 30px;" placeholder="Enter"> &nbsp;
+      <button (click)="addNew(bigbox.value)"
+        style="width: 50px; height: 35px; background-color: burlywood;">Add</button>
+    </div>
+
+    <div style="height: 3rem; width: 25rem; display: flex; justify-content: center; align-items: center;">
+      <input #delbox type="text" style="height: 30px;" placeholder="101"> &nbsp;
+      <button (click)="delit(delbox.value)"
+        style="width: 50px; height: 35px; background-color: burlywood;">Delete</button>
+    </div>
+
+    <div id="tsk" title="Your unfinished ones " style="overflow-y: scroll; padding: 1.4rem;">
+      <ul id="list" *ngFor="let buga of newList">
+        <h4 class="llx" *ngIf="buga.state; then ifPart else elsePart"></h4>
+        <!-- <li ></li> -->
+        <ng-template #ifPart>
+          <li class="llx">{{buga.id}}&nbsp;|&nbsp;{{buga.name}}</li>
+        </ng-template>
+        <ng-template #elsePart>
+        </ng-template>
+        <!-- </h4> -->
+      </ul>
+    </div>
+
+
+  </div>
+</div>
+
+<h4>other</h4><br>
+<h4 *ngIf="tf; then ifpart else elsepart"></h4>
+
+<ng-template #ifpart>
+  <h4>hi i'm true</h4>
+</ng-template>
+
+<ng-template #elsepart>
+  <h4>hi i'm false</h4>
+</ng-template>
+
+<div [ngSwitch]="color">
+  <h2 style="color: red;" *ngSwitchCase="'red'">
+    red color
+  </h2>
+  <h2 style="color: grey;" *ngSwitchCase="'grey'">
+    grey color
+  </h2>
+  <h2 style="color: black;" *ngSwitchCase="'black'">
+    black color
+  </h2>
+  <h2 style="color: yellow;" *ngSwitchCase="'yellow'">
+    yellow color
+  </h2>
+  <h2 style="color: blueviolet;" *ngSwitchDefault>
+    default
+  </h2>
+</div>
+<!-- 
+<h4 *ngFor="let item of arr">
+  {{item}}
+</h4> -->
+
+<h4 *ngFor="let item of arr">
+  {{item.name}}
+  {{item.age}}
+</h4>
+
+<table border="1">
+  <tr>
+    <td>Name</td>
+    <td>Age</td>
+  </tr>
+
+  <tr *ngFor="let item of arr">
+    <td>{{item.name}}</td>
+    <td>{{item.age}}</td>
+  </tr>
+</table>
+
+<form #now="ngForm" (ngSubmit)="getVal(now.value)">
+  <input type="text" ngModel name="username" placeholder="Shakib">
+  <br>
+  <input type="text" ngModel name="sirname" placeholder="Walls">
+  <br>
+  <input type="age" ngModel name="age" placeholder="18">
+
+  <button>Get User Values</button>
+</form>
+
+<h1 style="color: blueviolet;">blueviolet</h1>
+<h1 [style.backgroundColor]="'green'" [style.color]="'white'">Green</h1>
+<h1 [style.backgroundColor]="colour" [style.color]="'white'">Green</h1>
+<button (click)="updateCol()">Click Me</button>
+
+<h1 [style.color]="err?'red':'yellow'">Let's see</h1>
+<button (click)="updateD()">Click Me</button>
+
+
+
+
+
+<app-users [parentData]="data"></app-users>
+
+
+<app-users></app-users>
+
+
+
+
+
+
+
+
+
+
+<h4>{{nme | uppercase}}</h4>
+<h4>{{nme | titlecase}}</h4>
+<h4>{{nme | lowercase}}</h4>
+
+<h4>{{nowDate | date}}</h4>
+<h4>{{nowDate | date:'fullDate'}}</h4>
+
+<h4>{{strng}}</h4>
+<h4>{{strng | slice:2}}</h4>
+<h4>{{strng | slice:2:6}}</h4>
+
+<h4>{{money | currency:'USD'}}</h4>
+
+<!-- <h1>Fill the Form</h1>
+<form #myform="ngForm" (ngSubmit)="onSubmit(myform.value)">
+  First Name &nbsp; &nbsp; &nbsp; <input type="text" name="First Name" ngModel><br><br>
+  Second Name &nbsp; <input type="text" name="Second Name" ngModel><br><br>
+  Password &nbsp; &nbsp; &nbsp; &nbsp; <input type="password" name="Password" ngModel><br><br>
+  <button type="submit">Submit</button>
+</form> -->
+
+
+<h1>Fill the Form</h1>
+<div>
+  <form #myform="ngForm" (ngSubmit)="onSubmit(myform.value)">
+    <div class="form-group">
+      <label>First Name</label><br>
+      <input required #fname="ngModel" type="text" name="First Name" ngModel><br>
+      <!-- {{fname.touched}} -->
+      <span *ngIf="fname.invalid" class="error">This field is required</span><br><br>
+    </div>
+    <div class="form-group">
+      <label>Last Name</label><br>
+      <input required #lname="ngModel" type="text" name="Last Name" ngModel><br>
+      <span *ngIf="lname.invalid" class="error">This field is required</span><br><br>
+    </div>
+    <div class="form-group">
+      <label>Password</label><br>
+      <input type="password" name="Password" ngModel><br><br>
+    </div>
+    <button type="submit">Submit</button>
+  </form>
+</div>
+
+
+
+<div class="dxx">
+  <div class="boxx">
+    <form #myDetails="ngForm" (ngSubmit)="onSub(myDetails.value)">
+      <div class="gg"></div>
+      <div class="gg">
+        <label>First Name</label><br>
+        <input type="text" placeholder="Shakib"><br>
+        <span class="error">This Field is Mandatory</span><br><br>
+      </div>
+      <div class="gg">
+        <label>Second Name</label><br>
+        <input type="text" placeholder="Walles"><br>
+        <span class="error">This Field is Mandatory</span><br><br>
+      </div>
+      <div class="gg">
+        <label>E-Mail</label><br>
+        <input type="email" placeholder="shakib123@gmail.com"><br>
+        <span class="error">This Field is Mandatory</span><br><br>
+      </div>
+      <div class="gg">
+        <label>Password</label><br>
+        <input type="password" placeholder="password"><br><br>
+      </div>
+      <div>
+        <button type="submit">Click</button><br>
+      </div>
+      <div class="gg"></div>
+    </form>
+  </div>
+</div>
+
+
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * The content above * * * * * * * * * * * -->
+<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->
+<!-- * * * * * * * * * * and can be replaced. * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * End of Placeholder * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+
+<router-outlet></router-outlet>

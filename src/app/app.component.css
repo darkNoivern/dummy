@@ -1,0 +1,56 @@
+.dx, .dxx{
+    height: 46rem;
+    width: auto;
+    background-color: aquamarine;
+    /* border: 2px ; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.box{
+    height: 40rem;
+    width: 27rem;
+    background-color: cadetblue;
+    box-shadow: 0.7rem 0.7rem 0.7rem darkcyan;
+    display: grid;
+    grid-template-rows: 7.25rem 3rem 3rem 20.75rem;
+}
+
+.boxx{
+    height: 40rem;
+    width: 33rem;
+    background-color: burlywood;
+    box-shadow: 0.7rem 0.7rem 0.7rem darkcyan;
+}
+
+.gg{
+    font-size: medium;
+    height: 5rem;
+    padding-left: 2rem;
+}
+
+.llx{
+    list-style: none;
+    padding: 0.7rem;
+    background-color: darkslateblue;
+    margin: 0.3rem;
+}
+
+
+input{
+    height: 25px;
+    width: 270px;
+}
+
+input.ng-invalid{
+    border-left: 3.4px solid red;
+}
+
+input.ng-valid{
+    border-left: 3.4px solid green;
+}
+
+.error{
+    color: crimson;
+}
